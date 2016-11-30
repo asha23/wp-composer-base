@@ -55,7 +55,7 @@ Alternatively, just use MAMP. Or something like https://www.themejuice.it, which
 
 ## Config files
 
-There are three config files. Rename them to remove -sample and add the database information for each environment. Once you have done this, you can then edit the web/wp-config.php file - in here you will need to change the paths to reflect your environment
+There are three config files. Rename them to remove -sample and add the database information for each environment. Once you have done this, you can then edit the web/wp-config.php file - in here you will need to change the paths to reflect your environment. The standard config file will automatically detect which environment you are in and connect to the corresponding database.
 
 ```
 $dev_url = "your.dev.url";
@@ -76,17 +76,23 @@ Of course, you could change your ```/sites-available``` information on the serve
 
 # Theme Setup
 
-First off, navigate to the themes folder. ```web/content/themes/wp-seed```. You should rename this to reflect the project name and change the information in styles.css
+
+
+Navigate to the themes folder. ```web/content/themes/wp-seed```. You should rename this to reflect the project name and change the information in styles.css if you like.
 
 You will need node.js and npm installed on your computer before starting: https://nodejs.org/en/
 
+You should make sure yarn is installed - This is a next-level package manager: https://github.com/yarnpkg/yarn - A lot faster than npm and will make sure that any packages you install are available to any developer who comes to the project.
+
+    $ npm install yarn -g
+
 You will also need to install Gulp globally if it's not already installed on your machine.
 
-    $ npm install gulp -g
+    $ yarn install gulp -g
 
 Install bower if it's not already installed on your machine
 
-    $ npm install -g bower
+    $ yarn install -g bower
 
 
 
@@ -95,6 +101,8 @@ Install bower if it's not already installed on your machine
 [You can view the seed theme repo here](https://github.com/asha23/wp-seed)
 
 This theme uses Gulp for compilation and Bower for JavaScript dependency management. It is also based around SASS Bootstrap 3.
+
+## Folder Structure
 
 The main folder structure is as follows:
 
@@ -106,6 +114,8 @@ web/wp
 The content folder contains all the themes, plugins and files for the front-end.
 
 The wp folder is the base WordPress installation - You should not change anything in here.
+
+The ```.htaccess``` file contains the correct path system.
 
 
 Step by step:
